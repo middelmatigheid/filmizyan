@@ -1,0 +1,517 @@
+/* Main section */
+
+.user-info {
+  max-width: 1400px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px 10px rgb(163 163 163 / 18%);
+  border-radius: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  font-size: 20px;
+  font-family: Huninn;
+}
+
+.user-profile-img {
+  height: 318px;
+  min-width: 318px;
+  max-width: 318px;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.user-basic-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  word-break: break-all;
+}
+
+.user-text {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+}
+
+.user-nickname {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.user-login {
+  color: gray;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.user-description {
+  font-weight: 700;
+  text-align: justify;
+}
+
+.user-edit-button {
+  width: 300px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+  border-radius: 30px;
+  padding: 20px;
+  font-family: Huninn;
+  transition: ease-in-out 0.25s;
+}
+
+.user-edit-button:hover {
+  transform: scale(1.05);
+}
+
+/* Watch later */
+
+.watch-later-section {
+  width: 80%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.watch-later-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.watch-later-date {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.watch-later-overflow {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.watch-later-slider {
+  display: flex;
+  gap: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+.watch-later-button-prev img {
+  height: 40px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.watch-later-button-next img {
+  height: 40px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.watch-later {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+}
+
+.watch-later-img {
+  display: block;
+  border-radius: 15px;
+}
+
+.watch-later-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Films without reviews */
+
+.without-review-section {
+  width: 80%;
+  max-width: 1400px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.without-review-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.without-review-date {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.without-review-overflow {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.without-review-slider {
+  display: flex;
+  gap: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+.without-review-button-prev img {
+  height: 40px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.without-review-button-next img {
+  height: 40px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.without-review {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+}
+
+.without-review-img {
+  display: block;
+  border-radius: 15px;
+}
+
+.without-review-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.without-review-title {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.without-review-rating {
+    text-align: center;
+}
+
+.without-review-rating-value {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+/* Films */
+
+.films-title {
+  font-size: 70px;
+  margin: 90px 0;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+}
+
+.user-last-watched-films {
+  max-width: 1400px;
+  margin: auto;
+  height: 350px;
+  display: flex;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.films {
+  width: 80%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.film {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px 10px rgb(163 163 163 / 18%);
+  border-radius: 60px;
+  margin-bottom: 50px;
+}
+
+.film-img {
+  display: block;
+  max-width: 350px;
+  margin: 0 auto;
+  border-radius: 35px;
+}
+
+.film-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  word-break: break-all;
+}
+
+.film-info-text {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+.film-info-text-top {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.film-title {
+  font-size: 50px;
+  font-weight: 900;
+  font-family: Huninn;
+}
+
+.film-ratings {
+  display: flex;
+  justify-content: space-around;
+  font-family: Huninn;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.film-rating-value {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.film-rating-author {
+  font-weight: 500;
+}
+
+.film-review {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.film-review-title {
+  margin-bottom: 10px;
+  font-family: Huninn;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.film-review-date {
+  position: relative;
+  top: -10px;
+}
+
+.film-review-text {
+  margin-top: 20px;
+  text-align: justify;
+  word-break: normal;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.films-empty {
+  font-family: Comfortaa;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 100px;
+  color: #fff;
+}
+
+.film-review-like {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.film-review-like-button {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.1s linear;
+}
+
+.film-review-like-button:hover {
+    transform: scale(1.2);
+}
+
+.film-review-like-button-img, .film-review-like-button-img-active {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.film-review-like-button-img.active, .film-review-like-button-img-active.active {
+    opacity: 1;
+}
+
+/* User not found */
+
+.user-not-found {
+  min-height: 750px;
+  font-family: Comfortaa;
+  font-size: 24px;
+}
+
+.user-not-found-text {
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.film-review-date {
+  font-weight: 200;
+}
+
+.user-not-found-img {
+  display: block;
+  width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1400px) {
+  .film-title {
+    font-size: 40px;
+  }
+
+  .film-ratings {
+    font-size: 18px;
+  }
+
+  .film-rating-value {
+    font-size: 40px;
+  }
+
+  .film-review-title {
+    font-size: 25px;
+  }
+
+  .film-review-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .user-info {
+    flex-direction: column;
+  }
+
+  .user-basic-info {
+    text-align: center;
+  }
+
+  .user-edit-button {
+    margin: auto;
+  }
+
+  .films-title {
+    margin: 50px;
+  }
+
+  .film {
+    flex-direction: column;
+  }
+
+  .film-title {
+    text-align: center;
+  }
+
+  .film-review-title {
+    text-align: center;
+  }
+
+  .film-review-date {
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .film-ratings {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .user-not-found {
+    min-height: 650px;
+    font-size: 18px;
+  }
+
+  .user-not-found-img {
+    width: 80%;
+  }
+}

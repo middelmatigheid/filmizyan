@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa:wght@300..700&family=DM+Serif+Display:ital@0;1&family=Huninn&family=Patua+One&family=Ponomar&family=Quicksand:wght@300..700&family=Russo+One&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Wix+Madefor+Display:wght@400..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 450px;
+    font-family: Huninn;
+    position: relative;
+    background: url("/static/images/basic/background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: none;
+}
+
+/* Header */
+
+header {
+    margin: auto;
+    padding: 50px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    font-family: Bebas Neue;
+    font-size: 90px;
+    font-weight: 900;
+    color: #ffff;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.63);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px 10px rgba(163, 163, 163, 0.18);
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: auto 0;
+}
+
+.user:hover {
+    transform: scale(1.15);
+}
+
+.user-name {
+    font-family: Comfortaa;
+    font-weight: 400;
+    text-align: center;
+    font-size: 24px;
+}
+
+.user-logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+
+.searcher {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.63);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 20px 10px rgb(163 163 163 / 18%);
+    border-radius: 52px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searcher-input {
+    font-size: 20px;
+    padding: 0 20px;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+
+.searcher-input::placeholder {
+    font-size: 20px;
+    color: #00000080;
+}
+
+.searcher-link {
+    height: 50px;
+    width: 50px;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.searcher-img {
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading {
+    display: none;
+}
+
+.loading-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 30px;
+}
+
+.floating-circular {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform: scale(0.6);
+}
+
+.floating-circular > div {
+    position: absolute;
+    background-color: #3f3f3f;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    animation: cFade 0.8s infinite linear;
+}
+
+.floating-circular div:nth-child(1) {
+    left: 0;
+    top: 82px;
+    animation-delay: 0.3s;
+}
+
+.floating-circular div:nth-child(2) {
+    left: 24px;
+    top: 24px;
+    animation-delay: 0.4s;
+}
+
+.floating-circular div:nth-child(3) {
+    left: 82px;
+    top: 0;
+    animation-delay: 0.5s;
+}
+
+.floating-circular div:nth-child(4) {
+    right: 24px;
+    top: 24px;
+    animation-delay: 0.6s;
+}
+
+.floating-circular div:nth-child(5) {
+    right: 0;
+    top: 82px;
+    animation-delay:0.7s;
+}
+
+.floating-circular div:nth-child(6) {
+    right: 24px;
+    bottom: 24px;
+    animation-delay: 0.8s;
+}
+
+.floating-circular div:nth-child(7) {
+    left: 82px;
+    bottom: 0;
+    animation-delay: 0.9s;
+}
+
+.floating-circular div:nth-child(8) {
+    left: 24px;
+    bottom: 24px;
+    animation-delay: 1s;
+}
+
+@keyframes cFade {
+    0% { background-color: #ffffff }
+    100% { background-color: #3f3f3f }
+}
+
+footer {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+/* Media */
+
+@media (max-width: 1600px) {
+    .logo {
+        font-size: 70px;
+    }
+
+    .user-name {
+        font-size: 20px;
+    }
+
+    .searcher {
+        width: 35%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .logo {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .searcher {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+
+    .user {
+        order: 2;
+        bottom: 10px;
+        position: relative;
+    }
+
+    .searcher {
+        position: inherit;
+        order: 3;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
+
+    .user-name {
+        font-size: 20px;
+    }
+}
+
+@media (max-height: 600px) {
+  body {
+    min-height: 600px;
+  }
+
+  .main-section {
+    top: 0;
+    left: 0;
+    transform: none;
+    position: relative;
+    margin: 50px auto;
+  }
+}

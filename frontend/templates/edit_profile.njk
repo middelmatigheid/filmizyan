@@ -1,0 +1,42 @@
+{% extends "refresh_page.njk" %}
+
+{% block content %}
+    <section class="main-section">
+        {% if failed %}
+            <div class="failed">{{ failed }}</div>
+        {% endif %}
+        {% if user %}
+            <form method="post" enctype="multipart/form-data" class="user-info">
+                <div class="user-profile-img" style="background: url({{ user.img }}); background-size: cover; background-position: center;"></div>
+                <div class="user-full-information">
+                    <input class="user-nickname" name="nickname" value="{{ user.nickname }}" placeholder="Имя аккаунта">
+                    <input class="user-login" name="login" value="{{ user.login }}" placeholder="Логин">
+                    <textarea class="user-description" name="description" placeholder="Напишите о себе">{{ user.description }}</textarea>
+                    <div class="user-img">
+                        <label for="choose-file" class="choose-file">Выбрать изображение</label>
+                        <input type="file" id="choose-file" accept="image/png, image/jpeg, image/jpg" name="img">
+                    </div>
+                    <input type="submit" class="save-changes" value="Сохранить изменения">
+                    <a href="#" class="user-delete" id="delete">Удалить аккаунт</a>
+                    <div class="user-delete-block" style="display: none;">
+                        <a href="#" class="user-delete" id="sure_delete">Да, я хочу удалить аккаунт</a>
+                    </div>
+                </div>
+            </form>
+        {% else %}
+            <div class="user-not-found">
+                <div class="user-not-found-text">Пользователь не найден</span></div>
+                <img src="/static/images/basic/not-found.png" class="user-not-found-img">
+                <div class="user-not-found-text">Но зато есть такой котик</div>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/edit_profile.css">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src='/static/js/edit_profile.js'><\/script>
+{% endblock %}

@@ -1,0 +1,263 @@
+{% extends "refresh_page.njk" %}
+
+{% block content %}
+    <section class="main-section">
+        {% if profile %}
+            <div class="user-info">
+                <div class="user-profile-img" style="background: url({{ profile.img }}); background-size: cover; background-position: center;"></div>
+                <div class="user-basic-info">
+                    <div class="user-text">
+                        <div class="user-nickname">{{ profile.nickname }}</div>
+                        <div class="user-login">@{{ profile.login }}<br>{{ profile.registration_date }}</div>
+                        <div class="user-description">{{ profile.description }}</div>
+                    </div>
+                    {% if edit_user %}
+                        <a href="/profile/{{ profile.login }}/edit" class="user-edit-button">Редактировать профиль</a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Watch later -->
+            <div class="films-title">Watch later</div>
+            {% if profile.watch_later|length > 0 %}
+                <div class="watch-later-section">
+                    <div class="watch-later-inner">
+                        <div class="watch-later-button-prev"><img src="/static/images/basic/l_light.png"></div>
+                        <div class="watch-later-overflow">
+                            <div class="watch-later-slider">
+                            {% for film in profile.watch_later.slice(-2) %}
+                                <div class="watch-later">
+                                    <a class="watch-later-img" href="/film/{{ film.kinopoisk_id }}/" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                                    <div class="watch-later-info">
+                                        {% if film.name_ru %}
+                                            <a class="watch-later-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_ru }}
+                                            </a>
+                                        {% else %}
+                                            <a class="watch-later-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_original }}
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% for film in profile.watch_later %}
+                                <div class="watch-later">
+                                    <a class="watch-later-img" href="/film/{{ film.kinopoisk_id }}/" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                                    <div class="watch-later-info">
+                                        {% if film.name_ru %}
+                                            <a class="watch-later-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_ru }}
+                                            </a>
+                                        {% else %}
+                                            <a class="watch-later-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ filmname_original }}
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% for film in profile.watch_later.slice(0, 2) %}
+                                <div class="watch-later">
+                                    <a class="watch-later-img" href="/film/{{ film.kinopoisk_id }}/" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                                    <div class="watch-later-info">
+                                        {% if film.name_ru %}
+                                            <a class="watch-later-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_ru }}
+                                            </a>
+                                        {% else %}
+                                            <a class="watch-later-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_original }}
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                        <div class="watch-later-button-next"><img src="/static/images/basic/r_light.png"></div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="films-empty">Нет добавленных фильмов</div>
+            {% endif %}
+
+            <!-- Film without review-->
+            <div class="films-title">Recently viewed</div>
+            {% if profile.without_reviews|length > 0 %}
+                <div class="without-review-section">
+                    <div class="without-review-inner">
+                        <div class="without-review-button-prev"><img src="/static/images/basic/l_light.png"></div>
+                        <div class="without-review-overflow">
+                            <div class="without-review-slider">
+                            {% for film in profile.without_reviews.slice(-2) %}
+                                <div class="without-review">
+                                    <a class="without-review-img" href="/film/{{ film.kinopoisk_id }}/" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                                    <div class="without-review-info">
+                                        {% if film.name_ru %}
+                                            <a class="without-review-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_ru }}
+                                            </a>
+                                        {% else %}
+                                            <a class="without-review-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_original }}
+                                            </a>
+                                        {% endif %}
+                                        <div class="without-review-rating">
+                                            <div class="without-review-rating-value">{{ film.review_rating }}</div>
+                                            <div class="without-review-rating-text">Оценка</div>
+                                            <div class="without-review-rating-text">пользователя</div>
+                                        </div>
+                                        <div class="without-review-date">{{ film.review_date }}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% for film in profile.without_reviews %}
+                                <div class="without-review">
+                                    <a class="without-review-img" href="/film/{{ film.kinopoisk_id }}/" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                                    <div class="without-review-info">
+                                        {% if film.name_ru %}
+                                            <a class="without-review-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_ru }}
+                                            </a>
+                                        {% else %}
+                                            <a class="without-review-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_original }}
+                                            </a>
+                                        {% endif %}
+                                        <div class="without-review-rating">
+                                            <div class="without-review-rating-value">{{ film.review_rating }}</div>
+                                            <div class="without-review-rating-text">Оценка</div>
+                                            <div class="without-review-rating-text">пользователя</div>
+                                        </div>
+                                        <div class="without-review-date">{{ film.review_date }}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% for film in profile.without_reviews.slice(0, 2) %}
+                                <div class="without-review">
+                                    <a class="without-review-img" href="/film/{{ film.kinopoisk_id }}/" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                                    <div class="without-review-info">
+                                        {% if film.name_ru %}
+                                            <a class="without-review-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_ru }}
+                                            </a>
+                                        {% else %}
+                                            <a class="without-review-title" href="/film/{{ film.kinopoisk_id }}/">
+                                                {{ film.name_original }}
+                                            </a>
+                                        {% endif %}
+                                        <div class="without-review-rating">
+                                            <div class="without-review-rating-value">{{ film.review_rating }}</div>
+                                            <div class="without-review-rating-text">Оценка</div>
+                                            <div class="without-review-rating-text">пользователя</div>
+                                        </div>
+                                        <div class="without-review-date">{{ film.review_date }}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                        <div class="without-review-button-next"><img src="/static/images/basic/r_light.png"></div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Films with full review -->
+            <div class="films">
+                {% if profile.reviews|length > 0 %}
+                    {% for film in profile.reviews %}
+                        <div class="film" id="{{ film.review_id }}">
+                            <a href="/film/{{ film.kinopoisk_id }}" class="film-img" style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;"></a>
+                            <div class="film-info">
+                                {% if film.name_ru %}
+                                    <a class="film-title" href="/film/{{ film.kinopoisk_id }}/">
+                                    {{ film.name_ru }}
+                                    </a>
+                                {% else %}
+                                    <a class="film-title" href="/film/{{ film.kinopoisk_id }}/">
+                                    {{ film.name_original }}
+                                    </a>
+                                {% endif %}
+                                <div class="film-review-date">{{ film.review_date }}</div>
+
+                                <!-- Film ratings -->
+                                <div class="film-ratings">
+                                    <div class="film-rating">
+                                        <div class="film-rating-author">Оценка</div>
+                                        <div class="film-rating-value">{{ film.review_rating }}</div>
+                                        <div class="film-rating-count">пользователя</div>
+                                    </div>
+                                    <div class="film-rating">
+                                        <div class="film-rating-author">Кинопоиск</div>
+                                        <div class="film-rating-value">{{ film.rating_kinopoisk }}</div>
+                                        <div class="film-rating-count">
+                                            {% if film.rating_kinopoisk_vote_count % 100 in [11, 12, 13, 14, 15, 16, 17, 18, 19] %}
+                                              {{ film.rating_kinopoisk_vote_count }} оценок
+                                            {% elif film.rating_kinopoisk_vote_count % 10 in [2, 3, 4] %}
+                                              {{ film.rating_kinopoisk_vote_count }} оценки
+                                            {% elif film.rating_kinopoisk_vote_count % 10 == 1 %}
+                                              {{ film.rating_kinopoisk_vote_count }} оценка
+                                            {% else %}
+                                              {{ film.rating_kinopoisk_vote_count }} оценок
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="film-rating">
+                                        <div class="film-rating-author">IMDb</div>
+                                        <div class="film-rating-value">{{ film.rating_imdb }}</div>
+                                        <div class="film-rating-count">
+                                            {% if film.rating_imdb_vote_count % 100 in [11, 12, 13, 14, 15, 16, 17, 18, 19] %}
+                                              {{ film.rating_imdb_vote_count }} оценок
+                                            {% elif film.rating_imdb_vote_count % 10 in [2, 3, 4] %}
+                                              {{ film.rating_imdb_vote_count }} оценки
+                                            {% elif film.rating_imdb_vote_count % 10 == 1 %}
+                                              {{ film.rating_imdb_vote_count }} оценка
+                                            {% else %}
+                                              {{ film.rating_imdb_vote_count }} оценок
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Film review -->
+                                <div class="film-review">
+                                    <div class="film-review-title">{{ film.review_title }}</div>
+                                    <div class="film-review-text">{{ film.review_text }}</div>
+                                </div>
+                                <div class="film-review-like">
+                                <div class="film-review-like-button">
+                                    {% if film.review_id in user_likes %}
+                                    <img src="/static/images/basic/like.png" class="film-review-like-button-img">
+                                    <img src="/static/images/basic/like-active.png" class="film-review-like-button-img-active active">
+                                    {% else %}
+                                    <img src="/static/images/basic/like.png" class="film-review-like-button-img active">
+                                    <img src="/static/images/basic/like-active.png" class="film-review-like-button-img-active">
+                                    {% endif %}
+                                </div>
+                                <div class="film-review-like-count">{{ film.likes_amount }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% elif not films and not films_without_review %}
+                    <div class="films-empty">Нет оцененных фильмов</div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="user-not-found">
+                <div class="user-not-found-text">Пользователь не найден</span></div>
+                <img src="/static/images/basic/not-found.png" class="user-not-found-img">
+                <div class="user-not-found-text">Но зато есть такой котик</div>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/profile.css">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src='/static/js/profile.js'><\/script>
+{% endblock %}

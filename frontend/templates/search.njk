@@ -1,0 +1,162 @@
+{% extends "refresh_page.njk" %}
+
+{% block content %}
+  {% if films|length > 0 %}
+    <div class="search-info">
+      <div class="search-request">Поиск по <span class="request_bold">{{ search }}</span></div>
+      <div class="search-count"><span class="request_bold">{{ films|length }}</span> результатов</div>
+    </div>
+    <div class="films">
+      {% for film in films %}
+        <div class="film">
+          <a href="/film/{{ film.kinopoisk_id }}" class="film-img" 
+              style="background: url({{ film.poster_url }}); background-size: cover; background-position: center;">
+          </a>
+          <div class="film-info">
+            <div class="film-info-top">
+              {% if film.name_ru and film.name_original %}
+              <div class="film-title">
+                <a href="/film/{{ film.kinopoisk_id }}">
+                  {{ film.name_ru }} - {{ film.name_original}}
+                </a>
+              </div>
+              {% elif film.name_ru %}
+              <div class="film-title">
+                <a href="/film/{{ film.kinopoisk_id }}">
+                  {{ film.name_ru }}
+                </a>
+              </div>
+              {% else %}
+              <div class="film-title">
+                <a href="/film/{{ film.kinopoisk_id }}">
+                  {{ film.name_original }}
+                </a>
+              </div>
+              {% endif %}
+
+              <!-- Film year -->
+
+              
+              <span class="film-basics">
+                {% if film.is_serial %}
+                  Сериал 
+                {% else %}
+                  Фильм 
+                {% endif %} 
+
+                {% if film.length %} 
+                  {{ film.length }} мин 
+                {% endif %} 
+
+                {% if film.rating_age_limits %}
+                  <b>{{ film.rating_age_limits }}</b>
+                {% endif %}
+              </span>
+
+              <!-- Film countries -->
+
+              {% if film.countries %}
+                  {% if film.is_serial and film.end_year %}
+                      <div class="film-countries">
+                        <b>{{ film.start_year }} - {{ film.end_year }}</b> {{ film.countries }}
+                      </div>
+                  {% elif film.is_serial %}
+                      <div class="film-countries">
+                        <b>{{ film.start_year }}</b> {{ film.countries }}
+                      </div>
+                  {% else %}
+                      <div class="film-countries">
+                      <b>{{ film.year }}</b> {{ film.countries }}
+                      </div>
+                  {% endif %}
+              {% endif %}
+
+              <!-- Film genres -->
+
+              {% if film.genres %}
+                  <div class="film-genres">{{ film.genres }}</div>
+              {% endif %}
+
+              <!-- Film description -->
+
+              {% if film.description %}
+                  <div class="film-description">{{ film.description }}</div>
+              {% endif %}
+            </div>
+
+            <div class="film-info-bottom">
+              <!-- Film ratings -->
+              <div class="film-ratings">
+                {% if film.rating_kinopoisk %}
+                  <div class="film-rating">
+                      <div class="film-rating-author">Кинопоиск</div>
+                      <div class="film-rating-value">{{ film.rating_kinopoisk }}</div>
+                      <div class="film-rating-count">
+                        {% if film.rating_kinopoisk_vote_count % 100 in [11, 12, 13, 14, 15, 16, 17, 18, 19] %}
+                          {{ film.rating_kinopoisk_vote_count }} оценок
+                        {% elif film.rating_kinopoisk_vote_count % 10 in [2, 3, 4] %}
+                          {{ film.rating_kinopoisk_vote_count }} оценки
+                        {% elif film.rating_kinopoisk_vote_count % 10 == 1 %}
+                          {{ film.rating_kinopoisk_vote_count }} оценка
+                        {% else %}
+                          {{ film.rating_kinopoisk_vote_count }} оценок
+                        {% endif %}
+                      </div>
+                  </div>
+                {% endif %}
+                {% if film.rating_imdb %}
+                  <div class="film-rating">
+                      <div class="film-rating-author">IMDb</div>
+                      <div class="film-rating-value">{{ film.rating_imdb }}</div>
+                      <div class="film-rating-count">
+                        {% if film.rating_imdb_vote_count % 100 in [11, 12, 13, 14, 15, 16, 17, 18, 19] %}
+                          {{ film.rating_imdb_vote_count }} оценок
+                        {% elif film.rating_imdb_vote_count % 10 in [2, 3, 4] %}
+                          {{ film.rating_imdb_vote_count }} оценки
+                        {% elif film.rating_imdb_vote_count % 10 == 1 %}
+                          {{ film.rating_imdb_vote_count }} оценка
+                        {% else %}
+                          {{ film.rating_imdb_vote_count }} оценок
+                        {% endif %}
+                      </div>
+                  </div>
+                {% endif %}
+                {% if film.rating_user_vote_count != 0 %}
+                  <div class="film-rating">
+                      <div class="film-rating-author">Пользователи</div>
+                      <div class="film-rating-value">{{ (film.rating_user_sum / film.rating_user_vote_count)|round(1) }}</div>
+                      <div class="film-rating-count">
+                        {% if film.rating_user_vote_count % 100 in [11, 12, 13, 14, 15, 16, 17, 18, 19] %}
+                          {{ film.rating_user_vote_count }} оценок
+                        {% elif film.rating_user_vote_count % 10 in [2, 3, 4] %}
+                          {{ film.rating_user_vote_count }} оценки
+                        {% elif film.rating_user_vote_count % 10 == 1 %}
+                          {{ film.rating_user_vote_count }} оценка
+                        {% else %}
+                          {{ film.rating_user_vote_count }} оценок
+                        {% endif %}
+                      </div>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  <!-- Film not found -->
+  {% else %}
+    <div class="films-not-found">
+      <div class="search-request">
+        По запросу <span class="request_bold">{{ search }}</span> ничего не найдено
+      </div>
+      <img src="/static/images/basic/not-found.png" class="films-not-found-img"/>
+      <div class="films-not-found-text">Но зато есть такой котик</div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/search.css"/>
+{% endblock %}

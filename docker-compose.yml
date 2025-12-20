@@ -1,0 +1,81 @@
+services:
+  redis:
+    image: redis:7
+    container_name: filmizyan_redis
+    ports:
+      - "6379:${REDIS_PORT:-6379}"
+    volumes:
+      - logs:/logs
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - filmizyan_network
+
+  db:
+    image: postgres:14
+    container_name: filmizyan_postgresql
+    env_file:
+      - .env 
+    environment:
+      POSTGRES_DB: ${DB_NAME:-filmizyan}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256 --auth-local=scram-sha-256"
+    ports:
+      - "5433:${DB_PORT:-5432}"
+    volumes:
+      - logs:/logs
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - filmizyan_network
+
+  backend:
+    build: ./backend
+    container_name: filmizyan_backend
+    env_file:
+      - .env 
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - logs:/logs
+    networks:
+      - filmizyan_network
+
+  frontend:
+    build: ./frontend
+    container_name: filmizyan_frontend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - backend
+    volumes:
+      - logs:/logs
+    networks:
+      - filmizyan_network
+
+volumes:
+  logs:
+    driver: local
+  pgdata: 
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  filmizyan_network:
+    driver: bridge

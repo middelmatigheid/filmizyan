@@ -1,0 +1,1084 @@
+/* Film */
+
+.film {
+    width: 80%;
+    max-width: 1400px;
+    margin: auto;
+    margin-bottom: 70px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 8px 20px 10px rgb(163 163 163 / 18%);
+    border-radius: 60px;
+    position: relative;
+}
+
+/* Film main */
+
+.film-main {
+    display: flex;
+    gap: 20px;
+}
+
+.film-main-img {
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.film-main-img .film-ratings {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 30px;
+}
+
+.film-img {
+    display: block;
+    height: 540px;
+    min-width: 360px;
+    max-width: 360px;
+    border-radius: 35px;
+}
+
+.film-info {
+    display: flex;
+    gap: 20px;
+}
+
+/* Film info left part */
+
+.film-info-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.film-title {
+    font-family: Wix Madefor Display;
+    font-size: 44px;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.film-basic-info {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 30px;
+}
+
+.film-budgets {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.film-budget span {
+    font-weight: 600;
+}
+
+.film-description {
+    text-align: justify;
+    font-size: 18px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 30px;
+}
+
+/* Film info right part */
+
+.film-info-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.film-info-right-inner {
+    width: 100%;
+}
+
+/* Film ratings */
+
+.film-ratings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.film-rating-value {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    margin: 5px;
+}
+
+.film-rating-count {
+    font-size: 18px;
+    text-align: center;
+}
+
+.film-rating-author {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Awards */
+
+.awards {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.awards-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    height: 100%;
+}
+
+.award {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.awards-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.award-icon {
+    height: 30px;
+    width: 30px;
+}
+
+/* Film buttons */
+
+.watch-button {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px 80px;
+    background: rgba(0, 0, 0, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+    border-radius: 60px;
+    width: 250px;
+    transition: 0.25s;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.watch-button:hover {
+    transition: 0.25s;
+    transform: scale(1.08);
+}
+
+.watch-later-button {
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+    border-radius: 60px;
+    width: 250px;
+    transition: 0.25s;
+    cursor: pointer;
+    margin: auto;
+}
+
+.watch-later-button:hover {
+    transition: 0.25s;
+    transform: scale(1.08);
+}
+
+.watch-later-button.active {
+    color: #000;
+    background: #fff;
+}
+
+/* Trailers */
+
+.trailers-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.trailers-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.trailer-type {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.trailers-overflow {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.trailers-slider {
+    display: flex;
+    gap: 20px;
+    transition: all 0.25s ease-in-out;
+}
+
+.trailers-button-prev img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.trailers-button-next img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.trailer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    border-radius: 30px;
+}
+
+.trailer-img {
+    display: block;
+    border-radius: 15px;
+}
+
+.trailer-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Similar movies */
+
+.similars-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.similars-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.similars-overflow {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.similars-slider {
+    display: flex;
+    gap: 20px;
+    transition: all 0.25s ease-in-out;
+}
+
+.similars-button-prev img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.similars-button-next img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.similar {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    border-radius: 30px;
+}
+
+.similar-img {
+    display: block;
+    border-radius: 15px;
+}
+
+.similar-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Sequels */
+
+.sequels-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sequels-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sequel-type {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sequels-overflow {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sequels-slider {
+    display: flex;
+    gap: 20px;
+    transition: all 0.25s ease-in-out;
+}
+
+.sequels-button-prev img {
+    height: 40px;
+    cursor: pointer;
+    
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.sequels-button-next img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.sequel {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    border-radius: 30px;
+}
+
+.sequel-img {
+    display: block;
+    border-radius: 15px;
+}
+
+.sequel-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+/* Posters */
+
+.posters-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.posters-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.poster-type {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.posters-overflow {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.posters-slider {
+    display: flex;
+    gap: 20px;
+    transition: all 0.25s ease-in-out;
+}
+
+.posters-button-prev img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.posters-button-next img {
+    height: 40px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.poster {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    border-radius: 30px;
+}
+
+.poster-img {
+    display: block;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.poster-active {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    min-width: 500px;
+}
+
+.poster-active-inner {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.poster-active-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: #000;
+    opacity: 0.85;
+}
+
+.poster-active-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    max-height: 85%;
+    max-width: 85%;
+    border-radius: 15px;
+}
+
+/* Reviews */
+
+.reviews-user {
+    display: none;
+}
+
+.reviews-title {
+    margin-top: 50px;
+    margin-bottom: 35px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* New review */
+
+.new-review {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 40px;
+    padding: 15px;
+    font-family: Huninn;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.new-review-title {
+    height: 50px;
+    width: 180px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    resize: vertical;
+}
+
+.failed {
+    color: red;
+}
+
+.new-review-rating {
+    text-align: center;
+}
+
+select {
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  width: 200px;
+  transition: 0.4s;
+}
+
+select:hover, select:focus {
+  background: #dddddd;
+}
+
+select::picker-icon {
+  color: #999999;
+  transition: 0.4s rotate;
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+::picker(select) {
+  border: none;
+}
+
+option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+option:first-of-type {
+  border-radius: 8px 8px 0 0;
+}
+
+option:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+
+option:not(option:last-of-type) {
+  border-bottom: none;
+}
+
+option:nth-of-type(odd) {
+  background: white;
+}
+
+option:hover, option:focus {
+  background: rgba(192, 200, 255, 0.531);
+}
+
+option .icon {
+  font-size: 1.6rem;
+  text-box: trim-both cap alphabetic;
+}
+
+selectedcontent .icon {
+  display: none;
+}
+
+option:checked {
+  font-weight: bold;
+}
+
+::picker(select) {
+  opacity: 0;
+  transition: all 0.4s allow-discrete;
+}
+
+::picker(select):popover-open {
+  opacity: 1;
+}
+
+@starting-style {
+  ::picker(select):popover-open {
+    opacity: 0;
+  }
+}
+
+::picker(select) {
+  top: calc(anchor(bottom) + 1px);
+}
+
+select, ::picker(select) {
+  appearance: base-select;
+}
+
+.new-review-text {
+    min-height: 75px;
+    height: 75px;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    font-family: Comfortaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    color: #000;
+    outline: none;
+    resize: vertical;
+}
+
+.new-review-title-input {
+    min-height: 50px;
+    height: 50px;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    font-family: Comfortaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    color: #000;
+    outline: none;
+}
+
+.new-review-button {
+  width: 250px;
+  margin: auto;
+  font-size: 18px;
+  font-family: Huninn;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+  border-radius: 30px;
+  padding: 15px 20px;
+  transition: ease-in-out 0.25s;
+}
+
+.new-review-button:hover {
+  transform: scale(1.05);
+}
+
+/* Reviews */
+
+.review {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 40px;
+    padding: 15px;
+    font-family: Huninn;
+    display: flex;
+    gap: 20px;
+}
+
+.review-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.review-user {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.review-user-img {
+    height: 276px;
+    min-width: 276px;
+    max-width: 276px;
+    border-radius: 30px;
+}
+
+.review-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-username {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.review-rating-value {
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.review-rating-text {
+    font-size: 18px;
+}
+
+.review-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.review-text {
+    font-size: 20px;
+}
+
+/* Review buttons */
+
+.review-buttons {
+    display: flex;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.review-delete-button {
+  width: 300px;
+  font-size: 16px;
+  font-family: Huninn;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+  border-radius: 30px;
+  padding: 15px;
+  transition: ease-in-out 0.25s;
+}
+
+.review-delete-button:hover {
+  transform: scale(1.05);
+}
+
+.review-like {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.review-like-button {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.1s linear;
+}
+
+.review-like-button:hover {
+    transform: scale(1.2);
+}
+
+.review-like-button-img, .review-like-button-img-active {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.1s linear;
+}
+
+.review-like-button-img.active, .review-like-button-img-active.active {
+    opacity: 1;
+}
+
+.no-reviews {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Film not found */
+
+.film-not-found {
+    min-height: 750px;
+}
+
+.film-not-found-img {
+    display: block;
+    width: 700px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.film-not-found-text {
+    color: #fff;
+    font-family: Comfortaa;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/* Media */
+
+@media (max-width: 1500px) {
+    .film-title {
+        font-size: 34px;
+    }
+
+    .film-ratings {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .film-rating-value {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .film-main-img .film-ratings {
+        display: flex;
+    }
+
+    .film-ratings {
+        display: none;
+    }
+
+    .film-main {
+        flex-direction: column;
+    }
+
+    .film-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .film-info {
+        flex-direction: column;
+    }
+
+    .film-main-img .film-ratings {
+        display: none;
+    }
+
+    .film-ratings {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .film-basic-info {
+        text-align: center;
+    }
+
+    .film-info-right {
+        gap: 20px;
+    }
+
+    .film-info-right-inner {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .awards {
+        margin-bottom: 0;
+    }
+
+    .watch-button {
+        margin-bottom: 0;
+    }
+
+    .watch-later-button {
+        margin-bottom: 0;
+    }
+
+    .posters-inner {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .review {
+        flex-direction: column;
+    }
+
+    .review-title {
+        text-align: center;
+    }
+
+    .review-user {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .review-user-info {
+        justify-content: center;
+    }
+
+    .review-rating {
+        text-align: center;
+    }
+
+    .review-buttons {
+        justify-content: center;
+    }
+
+    .films-not-found-img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px) {
+    .review-user {
+        flex-direction: column;
+    }
+
+    .review-user-info {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .film-img {
+        min-width: 350px;
+        max-width: 350px;
+        height: 525px;
+    }
+
+    .film-info-right-inner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .award {
+        justify-content: center;
+    }
+
+    .posters-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .film-img {
+        min-width: 308px;
+        max-width: 308px;
+        height: 462px;
+    }
+}

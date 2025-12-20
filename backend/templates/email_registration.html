@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <body style="background:radial-gradient(at 48.92829364276674% 21.487162340829435%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%), radial-gradient(at 92.32371670706368% 94.97748311734382%, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 0) 100%), radial-gradient(at 54.04580128644534% 8.331544075157261%, hsla(0, 0%, 50.19607843137255%, 1) 0%, hsla(0, 0%, 50.19607843137255%, 0) 100%), radial-gradient(at 95.824743761897% 79.88200925496682%, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 100%);">
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" style="padding: 0;">
+        </td>
+          <table width="60%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td
+                align="center"
+                style="
+                  font-family: Arial, Helvetica, sans-serif;
+                  line-height: 1.6;
+                  padding: 50px;
+                  border-radius: 24px;
+                  background: rgba(255, 255, 255, 0.35);
+                  border: 1px solid rgba(255, 255, 255, 0.3);
+                  backdrop-filter: blur(5px);
+                  border-radius: 52px;
+                "
+              >
+                <h1 style="color: #4caf50; margin: 0 0 50px 0; font-size: 36px">
+                  Добро пожаловать на Filmizyan!
+                </h1>
+
+                <p
+                  style="
+                    width: 100%;
+                    margin: 0 0 40px 0;
+                    font-size: 22px;
+                    color: black;
+                  "
+                >
+                  Для завершения регистрации аккаунта
+                  <span
+                    style="
+                      unicode-bidi: bidi-override;
+                      direction: rtl;
+                      font-weight: 800;
+                    "
+                    >{{ account }}</span
+                  >
+                  нажмите на кнопку ниже:
+                </p>
+
+                <a href="{{ verification_url }}" style="
+                    text-decoration: none;
+                    color: white;
+                    display: inline-block;
+                    background: #4caf50;
+                    padding: 20px 35px;
+                    font-size: 20px;
+                    border-radius: 16px;
+                    margin: 0 0 50px 0;
+                  ">Подтвердить email</a>
+
+                <p style="margin: 0 0 20px 0; font-size: 20px">
+                  Ссылка будет активна {{ hours_active }} часа.
+                </p>
+
+                <div style="margin-top: 50px; font-size: 16px; color: #3c3c3c">
+                  Если вы не регистрировались, проигнорируйте это письмо.
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

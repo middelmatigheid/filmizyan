@@ -1,0 +1,21 @@
+{% extends "refresh_page.njk" %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/index.css"/>
+{% endblock %}
+
+{% block content %}
+  <section class="main-section">
+    <div class="main-title">
+      Твой гид по кино с ссылками на бесплатный просмотр
+    </div>
+    <div class="main-searcher">
+      <input type="text" name="query" placeholder="фильмы, сериалы" class="main-searcher-input" autocomplete="off"/>
+      <a href="/" class="main-searcher-link"><img src="/static/images/basic/search.png" class="main-searcher-img"/></a>
+    </div>
+  </section>
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="/static/js/index.js"><\/script>
+{% endblock %}

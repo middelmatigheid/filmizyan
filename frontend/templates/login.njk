@@ -1,0 +1,74 @@
+{% extends "refresh_page.njk" %}
+
+{% block content %}
+    <section class="main-section">
+        {% if user_nickname %}
+            <div class="select-block">
+                <div class="authorization-select">Вход</div>
+                <div class="registration-select active">Регистрация</div>
+            </div>
+            {% if failed %}
+                <div class="failed">{{ failed }}</div>
+            {% endif %}
+            <form method="post" class="authorization" style="display: none;">
+                <input type="text" id="login-authorization" class="input" placeholder="Логин" autocomplete="off">
+                <input type="text" id="password-authorization" class="input" placeholder="Пароль" autocomplete="off">
+                <input type="submit" value="Войти" class="submit">
+                <a href="/recovery" class="password-recovery">Восстановить пароль</a>
+            </form>
+
+            <form method="post" class="registration">
+                <input type="text" id="login-registration" class="input" placeholder="Логин" autocomplete="off" value="{{ user_login }}">
+                <input type="text" id="email-registration" class="input" placeholder="Почта" autocomplete="off" value="{{ user_email }}">
+                <input type="text" id="nickname-registration" class="input" placeholder="Имя аккаунта" autocomplete="off" value="{{ user_nickname }}">
+                <div class="block-button">
+                    <input type="text" id="password-registration" class="input" placeholder="Пароль" autocomplete="off">
+                    <button type="button" class="password-generation-button">
+                        <img src="/static/images/basic/lock.png" class="password-generation-img">
+                    </button>
+                    <div class="password-generation-text">Сгенерировать надёжный пароль</div>
+                </div>
+                <input type="text" id="repeat-password-registration" class="input" placeholder="Повторите пароль" autocomplete="off">
+                <input type="submit" value="Зарегистрироваться" class="submit" >
+            </form>
+            
+        {% else %}
+            <div class="select-block">
+                <div class="authorization-select active">Вход</div>
+                <div class="registration-select">Регистрация</div>
+            </div>
+            {% if failed %}
+                <div class="failed">{{ failed }}</div>
+            {% endif %}
+            <form method="post" class="authorization">
+                <input type="text" id="login-authorization" class="input" placeholder="Логин" autocomplete="off">
+                <input type="text" id="password-authorization" class="input" placeholder="Пароль" autocomplete="off">
+                <input type="submit" value="Войти" class="submit">
+                <a href="/recovery" class="password-recovery">Восстановить пароль</a>
+            </form>
+
+            <form method="post" class="registration" style="display: none;">
+                <input type="text" id="login-registration" class="input" placeholder="Логин" autocomplete="off">
+                <input type="text" id="email-registration" class="input" placeholder="Почта" autocomplete="off">
+                <input type="text" id="nickname-registration" class="input" placeholder="Имя аккаунта" autocomplete="off">
+                <div class="block-button">
+                    <input type="text" id="password-registration" id="password-registration" class="input" placeholder="Пароль" autocomplete="off">
+                    <button type="button" class="password-generation-button">
+                        <img src="/static/images/basic/lock.png" class="password-generation-img">
+                    </button>
+                    <div class="password-generation-text">Сгенерировать надёжный пароль</div>
+                </div>
+                <input type="text" id="repeat-password-registration" class="input" placeholder="Повторите пароль" autocomplete="off">
+                <input type="submit" value="Зарегистрироваться" class="submit">
+            </form>
+        {% endif %}
+    </section>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src='/static/js/login.js'><\/script>
+{% endblock %}

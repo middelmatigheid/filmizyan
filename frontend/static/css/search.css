@@ -1,0 +1,189 @@
+body {
+    height: auto;
+}
+
+/* Main section */
+
+.search-request {
+    font-family: Wix Madefor Display;
+    font-size: 32px;
+    font-weight: 400;
+    color: #ffff;
+    text-align: center;
+}
+
+.search-count {
+    font-family: Wix Madefor Display;
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.request_bold {
+    font-weight: 900;
+}
+
+.films {
+    font-family: Source Code Pro;
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.film {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.63);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+    border-radius: 55px;
+    margin-bottom: 70px;
+    transition: 0.25s;
+}
+
+.film:hover {
+    transition: 0.25s;
+    transform: scale(1.01);
+}
+
+.film-img {
+    display: block;
+    height: 540px;
+    min-width: 360px;
+    border-radius: 35px;
+}
+
+.film-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.film-info-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.film-description {
+    width: 100%;
+    text-align: justify;
+    font-size: 16px;
+}
+
+.film-title {
+    font-family: Wix Madefor Display;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.film-basics {
+    font-size: 18px;
+}
+
+.film-countries {
+    font-size: 18px;
+}
+
+.film-genres {
+    font-size: 18px;
+}
+
+.film-ratings {
+    display: flex;
+    gap: 50px;
+}
+
+.film-rating-value {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+}
+
+.film-rating-count {
+    text-align: center;
+    word-spacing: -4px;
+}
+
+.film-rating-author {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.films-not-found-img {
+    display: block;
+    width: 700px;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.films-not-found-text {
+    font-family: Comfortaa;
+    color: #ffff;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+/* Media */
+
+@media (max-width: 1600px) {
+    .films-count {
+        margin-top: 5px;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .film-title {
+        font-size: 24px;
+    }
+
+    .film-rating-value {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 950px) {
+    .film {
+        flex-direction: column;
+    }
+    
+    .film-img {
+        margin: auto;
+    }
+
+    .film-info {
+        text-align: center;
+    }
+
+    .film-title {
+        text-align: center;
+    }
+
+    .film-ratings {
+        justify-content: center;
+    }
+
+    .films-not-found-img {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .film-ratings {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

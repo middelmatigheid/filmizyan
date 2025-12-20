@@ -1,0 +1,38 @@
+<div class="container">
+    <header>
+        <a href="/" class="logo">Filmizyan</a>
+        {% if has_searcher %}
+            <div class="searcher">
+                <input type="text" name="query" placeholder="фильмы, сериалы" class="searcher-input" autocomplete="off"/>
+                <a href="#" class="searcher-link"><img src="/static/images/basic/search.png" class="searcher-img"/></a>
+            </div>
+        {% endif %}
+
+        {% if has_login %}
+            <a href="/login" class="user">
+                {% if user %}
+                <div class="user-logo" style="background: url({{ user.img }}); background-size: cover; background-position: center;"></div>
+                <div class="user-name">{{ user.nickname }}</div>
+                {% else %}
+                <div class="user-name" style="padding: 0 10px;">Log in</div>
+                {% endif %}
+            </a>
+        {% elif has_logout %}
+            <a href="/logout" class="user">
+                <div class="user-name" style="padding: 0 10px;">Log out</div>
+            </a>
+        {% endif %}
+    </header>
+
+    {% block content %}{% endblock %}
+
+    {% if has_footer %}
+        <footer>
+            <div class="footer-title">All rights are not reserved</div>
+            <div class="footer-year">FILMIZYAN 2025</div>
+        </footer>
+    {% endif %}
+</div>
+
+{% block css %}{% endblock %}
+{% block js %}{% endblock %}

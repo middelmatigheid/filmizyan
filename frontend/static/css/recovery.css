@@ -1,0 +1,154 @@
+/* Main section */
+
+.main-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 50px 0px rgba(163, 163, 163, 0.35);
+    backdrop-filter: blur(5px);
+    border-radius: 52px;
+}
+
+.failed {
+    padding: 30px;
+    padding-top: 0;
+    font-size: 18px;
+    color:  #FC2847;
+    width: 450px;
+    font-weight: 400;
+    font-family: Comfortaa;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 25px;
+    font-family: Comfortaa;
+    font-weight: 900;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 52px;
+    font-family: Comfortaa;
+    font-weight: 900;
+    outline: none;
+    height: 50px;
+}
+
+.submit {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 52px;
+    font-family: Comfortaa;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.block-button:has(input:focus) .password-generation-text {
+  display: block;
+}
+
+.block-button {
+    position: relative;
+    border-radius: 4px;
+    height: 50px;
+}
+
+.password-generation-button {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    transition: 0.25s;
+}
+
+.password-generation-img {
+    width: 35px;
+}
+
+.password-generation-text {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    font-family: Comfortaa;
+    font-weight: 900;
+    display: none;
+    position: absolute;
+    top: -20%;
+    left: 98%;
+    transform: translate(50px, -50%);
+    font-family: Comfortaa;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.password-generation-text::before {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.35);
+    transform: rotate(45deg);
+    bottom: -10px;
+    left: -10px;
+}
+
+
+/* Media */
+
+@media (max-width: 700px) {
+    .main-section {
+        width: 90%;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-height: 600px) {
+  body {
+    height: 600px;
+  }
+
+  .main-section {
+    top: 0;
+    left: 0;
+    transform: none;
+    position: relative;
+    margin: 50px auto;
+  }
+}

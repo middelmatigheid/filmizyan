@@ -1,0 +1,50 @@
+{% extends "refresh_page.njk" %}
+
+{% block content %}
+    <section class="main-section">
+        {% if user_login %}
+            <div class="title">Придумай новый пароль</div>
+            {% if failed %}
+                <div class="failed">{{ failed }}</div>
+            {% endif %}
+
+            <form method="post" class="form password">
+                <div class="block">
+                    <input type="text" name="login" class="input" placeholder="Логин" autocomplete="off" value="{{ user_login }}" readonly="readonly">
+                </div>
+                <div class="block-button">
+                    <input type="text" id="password" name="password" class="input" placeholder="Пароль" autocomplete="off">
+                    <button type="button" class="password-generation-button">
+                        <img src="/static/images/basic/lock.png" class="password-generation-img">
+                    </button>
+                    <div class="password-generation-text">Сгенерировать надёжный пароль</div>
+                </div>
+                <div class="block">
+                    <input type="text" name="repeat-password" class="input" placeholder="Повторите пароль" autocomplete="off">
+                </div>
+                <input type="submit" value="Сменить пароль" class="submit">
+            </form>
+            
+        {% else %}
+            <div class="title">Укажи имя логина, доступ к которому необходимо восстановить</div>
+            {% if failed %}
+                <div class="failed">{{ failed }}</div>
+            {% endif %}
+
+            <form method="post" class="form login">
+                <div class="block">
+                    <input type="text" name="login" class="input" placeholder="Логин" autocomplete="off">
+                </div>
+                <input type="submit" value="Восстановить пароль" class="submit" >
+            </form>
+        {% endif %}
+    </section>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/recovery.css">
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src='/static/js/recovery.js'><\/script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+  "name": "filmizyan",
+  "version": "1.0.0",
+  "description": "Website for films",
+  "license": "ISC",
+  "author": "middelmatigheid",
+  "type": "module",
+  "main": "frontend.js",
+  "scripts": {
+    "install-deps": "npm install",
+    "start": "node frontend.js"
+  },
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "jsonwebtoken": "^9.0.2",
+    "nunjucks": "^3.2.4",
+    "winston": "^3.19.0"
+  }
+}

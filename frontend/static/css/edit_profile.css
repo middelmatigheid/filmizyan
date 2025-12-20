@@ -1,0 +1,226 @@
+/* Main section */
+
+.user-info {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  font-family: Huninn;
+  max-width: 1400px;
+  width: 80%;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px 10px rgb(163 163 163 / 18%);
+  border-radius: 60px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 25px;
+}
+
+.user-profile-img {
+  height: 308px;
+  min-width: 308px;
+  max-width: 308px;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+.user-full-information {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.failed {
+  padding: 30px;
+  padding-top: 0;
+  font-size: 25px;
+  color:  #FC2847;
+  width: 450px;
+  font-weight: 400;
+  font-family: Comfortaa;
+  text-align: center;
+}
+
+.user-nickname {
+  font-size: 50px;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: Huninn;
+}
+
+.user-login {
+  color: gray;
+  text-align: left;
+  font-weight: 900;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: Huninn;
+}
+
+.user-description {
+  font-weight: 700;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 15px 10px;
+  font-family: Huninn;
+}
+
+input::file-selector-button {
+  text-align: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: Huninn;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 15px;
+}
+
+input::file-selector-button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+textarea {
+  resize: none;
+  min-height: 150px;
+  outline: none;
+}
+
+.user-img {
+  color: #000;
+  width: 308px;
+  text-align: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.63);
+  box-shadow: 0px 30px 80px -30px rgba(163, 163, 163, 0.6);
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-family: Huninn;
+}
+
+.user-img:hover {
+  transform: scale(1.05);
+}
+
+#choose-file {
+  display: none;
+}
+
+.save-changes {
+  width: 308px;
+  font-size: 16px;
+  font-family: Huninn;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+  border-radius: 30px;
+  padding: 15px;
+  transition: ease-in-out 0.25s;
+}
+
+.save-changes:hover {
+  transform: scale(1.05);
+}
+
+
+.user-delete {
+  display: block;
+  text-align: center;
+  width: 308px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 5px 20px 0px rgb(163, 163, 163, 0.8);
+  border-radius: 30px;
+  padding: 15px;
+  font-family: Huninn;
+  transition: ease-in-out 0.25s;
+}
+
+.user-delete:hover {
+  transform: scale(1.05);
+}
+
+.user-delete.active {
+  color: #000;
+  background: #fff;
+}
+
+.user-button {
+  display: block;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.user-not-found {
+  min-height: 750px;
+  font-family: Comfortaa;
+  font-size: 24px;
+}
+
+.user-not-found-text {
+  font-weight: 500;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.user-not-found-img {
+  display: block;
+  width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+  .user-info {
+    flex-direction: column;
+  }
+
+  .user-full-information {
+    align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .logo {
+    font-size: 60px;
+  }
+
+  .user-name {
+    font-size: 18px;
+  }
+
+  .user-not-found {
+    min-height: 650px;
+    font-size: 18px;
+  }
+
+  .user-not-found-img {
+    width: 80%;
+  }
+}
